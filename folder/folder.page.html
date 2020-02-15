@@ -15,35 +15,28 @@
         <ion-card-title>Dove ti piacerebbe andare?</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <ion-chip color="primary">
-          <ion-label>Havana</ion-label>
-        </ion-chip>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <ion-item>
+            <ion-label position="floating">Città di partenza</ion-label>
+            <ion-input type="text" clearInput(ionChange)="setDisabled()" formControlName="cittaPartenza"></ion-input>
+          </ion-item>
 
-        <ion-chip color="secondary">
-          <ion-label>Los Angeles</ion-label>
-        </ion-chip>
+          <ion-item>
+            <ion-label position="floating">Città di arrivo</ion-label>
+            <ion-input type="text" clearInput [disabled]="this.cittaRitornoDisab" formControlName="cittaRitorno"></ion-input>
+          </ion-item>
 
-        <ion-chip color="tertiary">
-          <ion-label>Parigi</ion-label>
-        </ion-chip>
+          <ion-item>
+            <ion-label position="floating">Data di partenza</ion-label>
+            <ion-datetime displayFormat="MM/DD/YYYY" min="1994-03-14" max="2012-12-09" formControlName="dataPartenza"></ion-datetime>
+          </ion-item>
 
-        <ion-chip color="success">
-          <ion-label>Budapest</ion-label>
-        </ion-chip>
+          <ion-item>
+            <ion-label position="floating">Data di ritorno</ion-label>
+            <ion-datetime displayFormat="MM/DD/YYYY" min="1994-03-14" max="2012-12-09" formControlName="dataRitorno"></ion-datetime>
+          </ion-item>
+        </form>
 
-        <ion-chip color="danger">
-          <ion-label>Madrid</ion-label>
-        </ion-chip>
-
-        <ion-item>
-          <ion-label position="floating">Data di partenza</ion-label>
-          <ion-datetime displayFormat="MM/DD/YYYY" min="1994-03-14" max="2012-12-09"></ion-datetime>
-        </ion-item>
-
-        <ion-item>
-          <ion-label position="floating">Data di ritorno</ion-label>
-          <ion-datetime displayFormat="MM/DD/YYYY" min="1994-03-14" max="2012-12-09"></ion-datetime>
-        </ion-item>
 
       </ion-card-content>
     </ion-card>
