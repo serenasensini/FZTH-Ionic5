@@ -9,6 +9,15 @@
 
 <ion-content [fullscreen]="true">
   <div id="container">
-    <ion-button expand="block" (click)="presentAlert()">Visualizza messaggio</ion-button>
+    <ion-card class="welcome-card">
+      <ion-card-header>
+        <ion-card-subtitle>From zero to hero!</ion-card-subtitle>
+        <ion-card-title>Benvenuto in Ionic</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vel auctor nisi. Aenean iaculis congue metus bibendum aliquam. Fusce id mauris imperdiet, ultricies nulla vel, congue sem. Ut sed nibh in massa ullamcorper vulputate sit amet at diam. Quisque posuere vehicula fringilla. Nulla congue enim laoreet ante hendrerit, at malesuada odio placerat. Sed vitae finibus sem. Ut interdum pellentesque interdum. Sed ornare tincidunt erat, vitae venenatis nunc maximus a. Nam scelerisque, sem sed consequat faucibus, lorem est vulputate est, at interdum nisl diam nec nisi. Fusce in ante vitae enim efficitur blandit. Maecenas faucibus augue ut massa iaculis, sed facilisis libero viverra. Fusce laoreet magna at volutpat imperdiet. Integer nisl nunc, sodales et leo at, eleifend bibendum nisl. Quisque eu feugiat sapien, a rhoncus libero. Donec ac nisi condimentum, lacinia ipsum sit amet, egestas justo.</p>
+        <ion-button expand="block" (click)="presentAlert()">Leggi il messaggio!</ion-button>
+      </ion-card-content>
+    </ion-card>
   </div>
 </ion-content>
