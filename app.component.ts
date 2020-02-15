@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Platform } from '@ionic/angular';
+import {AlertController, Platform} from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
@@ -46,11 +46,13 @@ export class AppComponent implements OnInit {
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
   constructor(
-    private platform: Platform,
-    private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+      private platform: Platform,
+      private splashScreen: SplashScreen,
+      private statusBar: StatusBar,
+      private alertController: AlertController
   ) {
     this.initializeApp();
+    this.presentAlert();
   }
 
   initializeApp() {
@@ -66,4 +68,16 @@ export class AppComponent implements OnInit {
       this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
     }
   }
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Avviso',
+      subHeader: 'Apertura app',
+      message: 'Questo messaggio viene visualizzato quando apri l\'app.',
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
+
 }
