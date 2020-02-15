@@ -9,30 +9,35 @@
 
 <ion-content [fullscreen]="true">
   <div id="container">
-    <ion-card>
+    <ion-card class="welcome-card">
       <ion-card-header>
-        <ion-card-subtitle>Scopriamo i tuoi gusti</ion-card-subtitle>
-        <ion-card-title>Scegli un personaggio</ion-card-title>
+        <ion-card-subtitle>Il tuo prossimo viaggio</ion-card-subtitle>
+        <ion-card-title>Dove ti piacerebbe andare?</ion-card-title>
       </ion-card-header>
       <ion-card-content>
+        <ion-chip color="primary">
+          <ion-label>Havana</ion-label>
+        </ion-chip>
 
-        <ion-item>
-          <ion-checkbox color="light"></ion-checkbox> Paperino
-        </ion-item>
-        <ion-item>
-          <ion-checkbox color="light"></ion-checkbox> Pluto
-        </ion-item>
-        <ion-item>
-          <ion-checkbox color="light"></ion-checkbox> Topolino
-        </ion-item>
-        <ion-item>
-          <ion-checkbox color="light"></ion-checkbox> Archimede
-        </ion-item>
-        <ion-item>
-          <ion-checkbox color="light"></ion-checkbox> Paperoga
-        </ion-item>
+        <ion-chip color="secondary">
+          <ion-label>Los Angeles</ion-label>
+        </ion-chip>
+
+        <ion-chip color="tertiary">
+          <ion-label>Parigi</ion-label>
+        </ion-chip>
+
+        <ion-chip color="success">
+          <ion-label>Budapest</ion-label>
+        </ion-chip>
+
+        <ion-chip color="danger">
+          <ion-label>Madrid</ion-label>
+        </ion-chip>
+
       </ion-card-content>
     </ion-card>
+
 
   </div>
 </ion-content>
