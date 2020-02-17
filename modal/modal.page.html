@@ -1,0 +1,18 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-title>Dettaglio</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="this.dismiss()">Chiudi</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding">
+  <h1>
+    {{this.citta_nome}}
+  </h1>
+  <p>
+    {{this.citta_desc}}
+  </p>
+</ion-content>
