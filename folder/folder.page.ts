@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {AlertController} from '@ionic/angular';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
@@ -17,8 +17,12 @@ export class FolderPage implements OnInit {
   form: FormGroup;
   submitted = false;
 
-
-  constructor(private activatedRoute: ActivatedRoute, private alertController: AlertController, private formBuilder: FormBuilder, ) { }
+  constructor(
+      private activatedRoute: ActivatedRoute,
+      private alertController: AlertController,
+      private formBuilder: FormBuilder,
+      private router: Router
+  ) { }
 
   ngOnInit() {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
@@ -36,12 +40,11 @@ export class FolderPage implements OnInit {
   onSubmit() {
     this.submitted = true;
 
-    // stop here if form is invalid
     if (this.form.invalid) {
       return;
     }
 
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.form.value));
+    this.router.navigateByUrl('ricerca');
   }
 
   async presentAlert() {
@@ -55,7 +58,7 @@ export class FolderPage implements OnInit {
   }
 
   setDisabled() {
-    if (this.cittaPartenza.length !== 0) {
+    if (this.form.get('cittaPartenza').value.length !== 0) {
       this.cittaRitornoDisab = false;
     }
   }
